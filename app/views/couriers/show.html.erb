@@ -1,4 +1,10 @@
-<h1>Courier <%= @courier.name %></h1>
+<h1>
+  Courier <%= @courier.name %>
+  <div class="btn-group float-end">
+    <%= link_to bi_icon('pencil', text: 'Edit'), edit_courier_path, class: 'btn btn-primary' %>
+    <%= link_to bi_icon('trash2', text: 'Destroy'), courier_path, method: :delete, class: 'btn btn-secondary', data: { confirm: 'Are you sure?' } %>
+  </div>
+</h1>
 <table class="table">
   <tr>
     <th>Name</th>
@@ -9,8 +15,17 @@
     <td><%= @courier.email %></td>
   </tr>
 </table>
-
-<div class="btn-group">
-  <%= link_to 'Edit', edit_courier_path, class: 'btn btn-primary' %>
-  <%= link_to 'Destroy', courier_path, method: :delete, class: 'btn btn-secondary', data: { confirm: 'Are you sure?' } %>
+<div class="card card-body">
+  <%= render partial: 'packages/form', locals: { courier: @courier, package: @package } %>
 </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tracking Number</th>
+      <th>Delivery Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @courier.packages.where.not(id: nil) %>
+  </tbody>
+</table>

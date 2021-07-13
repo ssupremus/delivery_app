@@ -13,7 +13,12 @@
   <body>
     <%= render 'layouts/navigation' %>
     <div class="container">
-      <%= yield %>
+      <div class="row">
+        <div class="col">
+          <%= render 'layouts/errors' %>
+          <%= yield %>
+        </div>
+      </div>
     </div>
   </body>
 </html>

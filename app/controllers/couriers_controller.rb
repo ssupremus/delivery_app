@@ -15,22 +15,22 @@ class CouriersController < ApplicationController
     @courier = Courier.new(courier_params)
 
     if @courier.save
-      redirect_to courier_path(@courier)
+      redirect_to @courier
     else
-      flash[:error] = @courier.errors.full_messages.to_sentence
       render :new
     end
   end
 
-  def show; end
+  def show
+    @package = @courier.packages.new
+  end
 
   def edit; end
 
   def update
     if @courier.update(courier_params)
-      redirect_to courier_path(@courier)
+      redirect_to @courier
     else
-      flash[:error] = @courier.errors.full_messages.to_sentence
       render :edit
     end
   end
