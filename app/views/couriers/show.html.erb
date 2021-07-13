@@ -1,0 +1,16 @@
+<h1>Courier <%= @courier.name %></h1>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <td><%= @courier.name %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= @courier.email %></td>
+  </tr>
+</table>
+
+<div class="btn-group">
+  <%= link_to 'Edit', edit_courier_path, class: 'btn btn-primary' %>
+  <%= link_to 'Destroy', courier_path, method: :delete, class: 'btn btn-secondary', data: { confirm: 'Are you sure?' } %>
+</div>

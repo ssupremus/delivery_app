@@ -1,0 +1,11 @@
+<tr>
+  <td><%= courier.name %></td>
+  <td><%= courier.email %></td>
+  <td>
+    <div class="btn-group float-end">
+      <%= link_to 'Show', courier_path(courier), class: 'btn btn-sm btn-light' %>
+      <%= link_to 'Edit', edit_courier_path(courier), class: 'btn btn-sm btn-light' %>
+      <%= link_to 'Destroy', courier_path(courier), method: :delete, class: 'btn btn-sm btn-light', data: { confirm: 'Are you sure?' } %>
+    </div>
+  </td>
+</tr>

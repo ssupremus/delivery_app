@@ -1,0 +1,16 @@
+<h1>
+  Couriers
+  <%= link_to bi_icon('plus-lg', text: 'Add Courier'), new_courier_path, class: 'btn btn-primary float-end' %>
+</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @couriers %>
+  </tbody>
+</table>
