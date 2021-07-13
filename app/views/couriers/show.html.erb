@@ -1,9 +1,6 @@
 <h1>
   Courier <%= @courier.name %>
-  <div class="btn-group float-end">
-    <%= link_to bi_icon('pencil', text: 'Edit'), edit_courier_path, class: 'btn btn-primary' %>
-    <%= link_to bi_icon('trash2', text: 'Destroy'), courier_path, method: :delete, class: 'btn btn-secondary', data: { confirm: 'Are you sure?' } %>
-  </div>
+  <%= link_to bi_icon('pencil', text: 'Edit'), edit_courier_path, class: 'btn btn-primary float-end' %>
 </h1>
 <table class="table">
   <tr>
